@@ -4,7 +4,7 @@
     <application
         android:name=".CoreApp"
         android:label="${appName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@android:drawable/sym_def_app_icon">
 
         <!-- Main launcher activity (exported for Android 12+) -->
         <activity
