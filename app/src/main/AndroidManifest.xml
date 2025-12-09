@@ -6,13 +6,17 @@
         android:label="${appName}"
         android:icon="@mipmap/ic_launcher">
 
-        <activity android:name=".MainActivity">
+        <!-- Main launcher activity (exported for Android 12+) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
+        <!-- Accessibility service -->
         <service
             android:name=".AppAccessibilityService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
