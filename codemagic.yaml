@@ -5,7 +5,8 @@ workflows:
 
     environment:
       vars:
-        JAVA_HOME: /usr/lib/jvm/java-17-openjdk
+        # Correct JAVA_HOME path for macOS Codemagic machines
+        JAVA_HOME: /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 
     scripts:
       - name: Build Debug APK
