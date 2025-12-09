@@ -5,11 +5,6 @@ workflows:
     environment:
       vars:
         PROJECT_NAME: Jarvis Mini
-      android:
-        sdk: "34"
-        build_tools: "34.0.0"
-        ndk: "25.2.9519653"
-      image: ubuntu-latest
     scripts:
       - name: Install Gradle
         script: |
@@ -30,5 +25,3 @@ workflows:
       email:
         recipients:
           - your-email@example.com
-        on_success: always
-        on_failure: always
