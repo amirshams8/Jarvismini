@@ -6,11 +6,6 @@ workflows:
     environment:
       vars:
         JAVA_HOME: /usr/lib/jvm/java-17-openjdk
-      flutter: false
-      android:
-        # Specify SDK version
-        sdk: 34
-        build_tools: 34.0.0
 
     scripts:
       - name: Build Debug APK
@@ -18,10 +13,3 @@ workflows:
 
     artifacts:
       - app/build/outputs/apk/debug/app-debug.apk
-
-    publishing:
-      email:
-        recipients:
-          - amirshamse8@gmail.com
-        on_success: always
-        on_failure: always
