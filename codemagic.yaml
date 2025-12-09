@@ -1,0 +1,34 @@
+workflows:
+  android-build:
+    name: Jarvis Mini Android Build
+    max_build_duration: 60
+    environment:
+      vars:
+        PROJECT_NAME: Jarvis Mini
+      android:
+        sdk: "34"
+        build_tools: "34.0.0"
+        ndk: "25.2.9519653"
+      image: ubuntu-latest
+    scripts:
+      - name: Install Gradle
+        script: |
+          GRADLE_VERSION=8.3.1
+          wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
+          unzip gradle-${GRADLE_VERSION}-bin.zip
+          export PATH=$PWD/gradle-${GRADLE_VERSION}/bin:$PATH
+          gradle --version
+      - name: Build Debug APK
+        script: |
+          gradle clean assembleDebug
+      - name: Run Unit Tests
+        script: |
+          gradle testDebugUnitTest
+    artifacts:
+      - build/app/outputs/apk/debug/app-debug.apk
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
+        on_success: always
+        on_failure: always
