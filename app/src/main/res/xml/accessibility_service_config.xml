@@ -6,6 +6,5 @@
     android:accessibilityFeedbackType="feedbackGeneric"
     android:notificationTimeout="50"
     android:canRetrieveWindowContent="true"
-    android:flags="flagRetrieveInteractiveWindows|flagReportViewIds"
     android:description="@string/service_desc"
     android:label="@string/app_name"/>
